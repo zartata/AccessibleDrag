@@ -1,4 +1,4 @@
-var tapDrag = (function(window, document, jQuery){
+var tabDrag = (function(window, document, jQuery){
 
     this.config = {
         draggable: ".ui-draggable",
@@ -21,10 +21,10 @@ var tapDrag = (function(window, document, jQuery){
 
     };
 
-    this.begin = function(){
+    this.initDrag = function(){
 
     };
 
-    module.exports = tapDrag;
+    module.exports = tabDrag;
 
 })(window, document, jQuery);
