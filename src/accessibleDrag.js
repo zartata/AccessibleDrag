@@ -1,30 +1,21 @@
-var tabDrag = (function(window, document, jQuery){
-
-    this.config = {
-        draggable: ".ui-draggable",
-        droppable: ".ui-droppable"
+;
+"use strict";
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        module.exports = factory(require("jquery"), window, document);
+    } else {
+        factory(jQuery, window, document);
+    }
+})(function (win, doc, $) {
+    function getDraggables () {
+        return $("*").filter(function () {
+            return $(this).data("ui-draggable");
+        });
     };
-
-    this.getDraggable = function(){
-        return this.config.draggable;
+    function getDroppables () {
+        return $("*").filter(function () {
+            return $(this).data("ui-droppable");
+        });
     };
+});
 
-    this.getDroppable = function(){
-        return this.config.droppable;
-    };
-
-    this.setIndex = function () {
-
-    };
-
-    this.setARIA = function () {
-
-    };
-
-    this.initDrag = function(){
-
-    };
-
-    module.exports = tabDrag;
-
-})(window, document, jQuery);

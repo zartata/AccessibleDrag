@@ -3,38 +3,70 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>accessibleDrag</title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700' rel='stylesheet' type='text/css'>-->
+    <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
-    <div class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">accessibleDrag.js</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+<div class="container-main">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">accessibleDrag</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#contact">API</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--End Nav-->
+    <div class="page page1" id="page1">
+        <div class="left">
+            <h1>Draggable</h1>
+            <div class="drag-box"></div>
+            <div class="drag-box"></div>
+            <div class="drag-box"></div>
+            <div class="drag-box"></div>
+            <div class="drag-box"></div>
+        </div>
+        <div class="right">
+            <h1>Droppable</h1>
+            <div class="drop-box"></div>
+            <div class="drop-box"></div>
+            <div class="drop-box"></div>
+            <div class="drop-box"></div>
+            <div class="drop-box"></div>
         </div>
     </div>
 </div>
-
 
 <!--Script files at the end to encourage HTML loading-->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../src/accessibleDrag.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".drag-box").draggable({
+            zIndex:100,
+            revert: "invalid",
+            addClasses:false
+        });
+
+        $(".drop-box").droppable({
+            accept:".drag-box"
+
+        });
+    });
+</script>
 </body>
 </html>

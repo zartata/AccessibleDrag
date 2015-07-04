@@ -22,7 +22,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "~3.10.0"
+  },
   "devDependencies": {
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",
