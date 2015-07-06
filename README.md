@@ -38,7 +38,7 @@ The Australian Government has also mandated via the [Disability Discrimination A
 
 The Israeli Ministry of Justice recently published regulations requiring Internet websites to comply with Israeli standard 5568, which is based on the W3C Web Content Accessibility Guidelines 2.0.
 
-In the US, Section 508 is being (slowly) refreshed to harmonize with WCAG 2. The European Commission has moved to WCAG 2 as a European government standard. The governments of Australia, Canada, France, Germany, Hong Kong, Ireland, Japan, Netherlands, New Zealand, Norway and the UK have already adopted WCAG 2. [ref](http://www.powermapper.com/blog/government-accessibility-standards/)
+In the US, Section 508 is being (slowly) refreshed to harmonize with WCAG 2. The European Commission has moved to WCAG 2 as a European government standard. The governments of Australia, Canada, France, Germany, Hong Kong, Ireland, Japan, Netherlands, New Zealand, Norway and the UK have [already adopted WCAG 2](http://www.powermapper.com/blog/government-accessibility-standards/).
 
 Link: [Identifying Legal and Policy Factors for a Specific Organization](http://www.w3.org/WAI/bcase/pol#custom)
 
