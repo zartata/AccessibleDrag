@@ -40,6 +40,8 @@ The Israeli Ministry of Justice recently published regulations requiring Interne
 
 In the US, Section 508 is being (slowly) refreshed to harmonize with WCAG 2. The European Commission has moved to WCAG 2 as a European government standard. The governments of Australia, Canada, France, Germany, Hong Kong, Ireland, Japan, Netherlands, New Zealand, Norway and the UK have already adopted WCAG 2. [ref](http://www.powermapper.com/blog/government-accessibility-standards/)
 
+Link: [Identifying Legal and Policy Factors for a Specific Organization](http://www.w3.org/WAI/bcase/pol#custom)
+
 # Usage
 
 `Coming up`
