@@ -32,23 +32,22 @@
     <div class="page page1" id="page1">
         <div class="left">
             <h1>Draggable</h1>
-            <div class="drag-box"></div>
-            <div class="drag-box"></div>
-            <div class="drag-box"></div>
-            <div class="drag-box"></div>
-            <div class="drag-box"></div>
+            <div class="drag-box box"></div>
+            <div class="drag-box box"></div>
+            <div class="drag-box box"></div>
+            <div class="drag-box box"></div>
+            <div class="drag-box box"></div>
         </div>
         <div class="right">
             <h1>Droppable</h1>
-            <div class="drop-box"></div>
-            <div class="drop-box"></div>
-            <div class="drop-box"></div>
-            <div class="drop-box"></div>
-            <div class="drop-box"></div>
+            <div class="drop-box box"></div>
+            <div class="drop-box box"></div>
+            <div class="drop-box box"></div>
+            <div class="drop-box box"></div>
+            <div class="drop-box box"></div>
         </div>
     </div>
 </div>
-
 <!--Script files at the end to encourage HTML loading-->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -63,8 +62,11 @@
         });
 
         $(".drop-box").droppable({
-            accept:".drag-box"
-
+            accept:".drag-box",
+            drop: function (ui, e) {
+                $(this).droppable("destroy");
+                $(this).addClass("dropped");
+            }
         });
     });
 </script>

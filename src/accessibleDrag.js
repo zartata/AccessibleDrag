@@ -1,18 +1,20 @@
-;
-"use strict";
+;"use strict";
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         module.exports = factory(require("jquery"), window, document);
     } else {
-        factory(jQuery, window, document);
+        window.AccessibleDrag = factory(jQuery, window, document);
     }
 })(function (win, doc, $) {
-    function getDraggables () {
+    function AccessibleDrag(){
+
+    }
+    AccessibleDrag.prototype.getDraggables = function () {
         return $("*").filter(function () {
             return $(this).data("ui-draggable");
         });
     };
-    function getDroppables () {
+    AccessibleDrag.prototype.getDroppables = function() {
         return $("*").filter(function () {
             return $(this).data("ui-droppable");
         });
