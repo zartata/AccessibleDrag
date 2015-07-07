@@ -22,7 +22,8 @@ html, body, .container-main{
 .right{
   background: #ffc107;
 }
-.box{
+
+.drag-box, .drop-box {
   position: relative;
   display: block;
   margin: 10px auto;
@@ -31,8 +32,11 @@ html, body, .container-main{
   height: 28px;
   border: 2px solid grey;
 }
-.box:hover{
+
+.drag-box:hover {
   border: 2px dashed white;
 }
 
-
+.box:focus {
+  border: 2px dashed white;
+}

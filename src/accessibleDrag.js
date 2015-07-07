@@ -7,17 +7,23 @@
     }
 })(function (win, doc, $) {
     function AccessibleDrag(){
+        var AD = this;
+        var link = $("a[href]");
+        var draggable = function () {
+            return $("*").filter(function () {
+                return $(this).data("ui-draggable");
+            });
+        };
+        var droppable = function () {
+            return $("*").filter(function () {
+                return $(this).data("ui-droppable");
+            });
+        };
+
+        link.prop("tabIndex", "3");
 
     }
-    AccessibleDrag.prototype.getDraggables = function () {
-        return $("*").filter(function () {
-            return $(this).data("ui-draggable");
-        });
-    };
-    AccessibleDrag.prototype.getDroppables = function() {
-        return $("*").filter(function () {
-            return $(this).data("ui-droppable");
-        });
-    };
+
+    return AccessibleDrag;
 });
 
