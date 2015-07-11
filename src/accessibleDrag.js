@@ -6,21 +6,18 @@
         window.AccessibleDrag = factory(jQuery, window, document);
     }
 })(function (win, doc, $) {
-    function AccessibleDrag(){
-        var AD = this;
-        var link = $("a[href]");
-        var draggable = function () {
+    function AccessibleDrag(drag, drop) {
+
+        var all_drag = function () {
             return $("*").filter(function () {
                 return $(this).data("ui-draggable");
             });
         };
-        var droppable = function () {
+        var all_drop = function () {
             return $("*").filter(function () {
                 return $(this).data("ui-droppable");
             });
         };
-
-        link.prop("tabIndex", "3");
 
     }
 
