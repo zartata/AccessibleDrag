@@ -39,7 +39,7 @@
         //Bind event for the enter keyup
         drag.off().on("keyup",function(){
             var dragClone;
-            if (event.which === 13 || event.which === 32) {
+            if (event.keyCode === 13 || event.keyCode === 32) {
                 event.preventDefault();
                 if ($(this).is(":focus")) {
                     dragClone = $(this).clone();
