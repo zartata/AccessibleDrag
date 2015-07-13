@@ -34,24 +34,21 @@
         else{
             console.log("Either the drag or drop is not initialized");
         }
-        //Stage 1
-        drag.prop("tabIndex",1);
-        //Stage 2
+        //Initialize the draggable with TabIndex
+        drag.prop("tabindex", 1);
+        //Bind event for the enter keyup
         drag.off().on("keyup",function(){
             var dragClone;
-            if ( event.which == 13 ) {
+            if (event.which === 13 || event.which === 32) {
                 event.preventDefault();
-                if(drag.is(":focus")){
+                if ($(this).is(":focus")) {
                     dragClone = $(this).clone();
-                    console.log(dragClone);
+                    drag.prop("tabindex", -1);
+                    drop.prop("tabindex", 1);
                 }
             }
         });
-
     }
-
-
-
     return AccessibleDrag;
 });
 

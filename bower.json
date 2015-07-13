@@ -28,5 +28,6 @@
   "devDependencies": {
     "bootstrap": "~3.3.5",
     "jquery-ui": "~1.11.4"
-  }
+  },
+  "homepage": "https://github.com/raks437/AccessibleDrag"
 }
