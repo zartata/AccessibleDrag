@@ -42,10 +42,18 @@
             if (event.keyCode === 13 || event.keyCode === 32) {
                 event.preventDefault();
                 if ($(this).is(":focus")) {
-                    dragClone = $(this).clone();
+                    dragClone = $(this).html();
                     drag.prop("tabindex", -1);
                     drop.prop("tabindex", 1);
                 }
+            }
+            else if (event.keyCode === 9) {
+                drag.removeClass("keyboard-focused");
+                drop.removeClass("keyboard-focused");
+                $("*:focus").addClass("keyboard-focused").attr("");
+            }
+            else if (event.keyCode === 27) {
+
             }
         });
     }

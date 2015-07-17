@@ -1,41 +1,44 @@
-  html, body, .container-main {
-    width: 100%;
-    height: 100%; }
+html, body, .container-main {
+  width: 100%;
+  height: 100%;
+}
 
-  .page {
-    position: relative;
-    display: block;
-    padding-top: 50px;
-    height: 100%; }
+.page {
+  position: relative;
+  display: block;
+  padding-top: 50px;
+  height: 100%;
+}
 
-  .left, .right {
-    position: relative;
-    display: block;
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    float: left; }
+.left, .right {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
 
-  .left {
-    background: #03a9f4; }
+.left {
+  background: #03a9f4;
+}
 
-  .right {
-    background: #ffc107; }
+.right {
+  background: #ffc107;
+}
 
-  .drag-box, .drop-box {
-    position: relative;
-    display: block;
-    margin: 10px auto;
-    padding: 2px;
-    width: 60px;
-    height: 28px;
-    border: 2px solid grey; }
+.drag-box, .drop-box {
+  position: relative;
+  display: block;
+  margin: 10px auto;
+  padding: 2px;
+  width: 60px;
+  height: 28px;
+  border: 2px solid grey;
+}
 
-  .drag-box:hover {
-    border: 2px dashed white;
-  }
+.box:focus {
+  border: 2px dashed white;
+}
 
-  .box:focus {
-    border: 2px dashed white; }
-
-  /*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map */
