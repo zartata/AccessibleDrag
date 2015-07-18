@@ -44,7 +44,11 @@ Link: [Identifying Legal and Policy Factors for a Specific Organization](http://
 
 # Usage
 
-`Coming up`
+`AccessibleDrag(".ui-draggable", ".ui-droppable")`
+
+or
+
+`AccessibleDrag(".ui-droppable", ".ui-draggable")`
 
 # Contribute
 
