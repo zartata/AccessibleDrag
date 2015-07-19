@@ -21,8 +21,8 @@
         });
     }
     //main function
-    function AccessibleDrag(elem1, elem2){
-        var drag, drop;
+    function AccessibleDrag(elem1, elem2, options) {
+        var drag, drop, dragClone;
         if($(elem1).data("ui-draggable") && $(elem2).data("ui-droppable")){
             drag = $(elem1);
             drop = $(elem2);
@@ -35,26 +35,66 @@
             console.log("Either the drag or drop is not initialized");
         }
         //Initialize the draggable with TabIndex
-        drag.prop("tabindex", 1);
+        setTabIndex(drag);
+        setTabIndex(drop, -1);
+        drag.attr("data-dragged", false);
+        drop.attr("data-dropped", false);
         //Bind event for the enter keyup
         drag.off().on("keyup",function(){
-            var dragClone;
+            event.preventDefault();
+            event.stopPropagation();
             if (event.keyCode === 13 || event.keyCode === 32) {
+                console.log("Enter", event.which);
                 event.preventDefault();
-                if ($(this).is(":focus")) {
+                if ($(this).is(":focus") && !$(this).data("dragged")) {
                     dragClone = $(this).html();
-                    drag.prop("tabindex", -1);
-                    drop.prop("tabindex", 1);
+                    setTabIndex($(this), -1);
+                    drag.attr("tabindex", -1);
+                    drop.attr("tabindex", 1);
                 }
             }
-            else if (event.keyCode === 9) {
-                drag.removeClass("keyboard-focused");
-                drop.removeClass("keyboard-focused");
-                $("*:focus").addClass("keyboard-focused").attr("");
-            }
-            else if (event.keyCode === 27) {
+        });
+        drop.off().on("focus", function () {
+            var dropClone = $(this).html();
+            $(this).html(dragClone);
+            drop.off().on("keyup", function () {
+                event.preventDefault();
+                event.stopPropagation();
+                if (event.keyCode === 13) {
+                    console.log("Enter", event.which);
+                }
+                else if (event.keyCode === 9) {
+                    console.log("Tab", event.which);
+                    $(this).html(dragClone);
+                    $(this).off().on("blur", function () {
+                        $(this).html(dropClone);
+                    })
+                }
+                else if (event.keyCode === 27) {
+                    console.log("Esc", event.which);
 
-            }
+                }
+            });
+        });
+    }
+
+    function setTabIndex(elem, val) {
+        var tabIndex;
+        if (val && val !== "undefined") {
+            tabIndex = val;
+        }
+        else {
+            tabIndex = 1;
+        }
+        $(elem).each(function () {
+            $(this).attr("tabindex", tabIndex);
+            $(this).attr("data-tabindex", tabIndex);
+        });
+    }
+
+    function setCurrentTabIndex(elem) {
+        $(elem).each(function () {
+            $(this).attr("tabindex", $(this).data("tabindex"));
         });
     }
     return AccessibleDrag;
